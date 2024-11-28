@@ -1,66 +1,12 @@
 <html>
     <head>
-        <meta charset="UTF-8">
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="style.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+            <script src="main.js"></script>
     </head>
-
-    <style>
-        #box{
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            height: 70px;
-            background-color: rgba(255, 255, 255, 0.78);
-        }
-        #clock{
-            color: #EF794C;
-            font-family: Arial,sans-serif;
-            font-weight: 600;
-            font-size:42px;
-            margin-left: 3px;
-        }
-        #daystelop{
-            color: #EF794C;
-            font-family: Arial,sans-serif;
-            font-weight: 600;
-            font-size:20px;
-            margin-left: 42px;
-            margin-top:-24px;
-        }
-        #yearstelop{
-            color: #EF794C;
-            font-family: Arial,sans-serif;
-            font-weight: 600;
-            font-size:20px;
-            margin-left: 42px;
-        }
-        #zone{
-            color: rgb(255, 123, 0);
-            font-family: Helvetica,sans-serif;
-            font-weight: 300;
-            font-size:22px;
-            margin-left: 5px;
-        }
-        #super01{
-            color:rgb(255, 255, 255);
-            font-family: Noto Sans JP,sans-serif;
-            font-weight: 600;
-            font-size:30px;
-            padding-top:18px;
-            padding-left: 45px;
-            background-color: rgba(239, 121, 76,0.78);
-        }
-        marquee{
-            color: rgb(0, 0, 0);
-            font-family: Noto Sans JP,sans-serif;
-            font-size:25px;
-        }
-        #txt01{
-            width:100%;
-        }
-    </style>
     <body>
         <p id="super01">画面上部には固定テロップを表示</p>
         <div id="box">
@@ -97,43 +43,6 @@
                 </tr>
             </table>
         </div>
-
-        <script language="JavaScript">
-            var yyyymmddhhmiss = function() {
-              var date = new Date();
-              var yyyy = date.getFullYear();
-              var mm = toDoubleDigits(date.getMonth() + 1);
-              var dd = toDoubleDigits(date.getDate());
-              var hh = toDoubleDigits(date.getHours());
-              var mi = toDoubleDigits(date.getMinutes());
-              var ss = toDoubleDigits(date.getSeconds());
-              var hhutc = toDoubleDigits(date.getUTCHours());
-              var miutc = toDoubleDigits(date.getUTCMinutes());
-              var ssutc = toDoubleDigits(date.getUTCSeconds());
-              var element = document.getElementById("clock");
-              var years = document.getElementById("yearstelop");
-              var dayz = document.getElementById("daystelop");
-              element.innerHTML =  hh + ':' + mi;
-              years.innerHTML = yyyy;
-              dayz.innerHTML = mm + '/' + dd;
-
-            //   if(ss<30){
-            //     element.innerHTML =  hh + ':' + mi;
-            //     document.getElementById("zone").textContent = "JST"
-            //   }else{
-            //     element.innerHTML =  hhutc + ':' + miutc;
-            //     document.getElementById("zone").textContent = "GMT"
-            //   }
-            };
-            var toDoubleDigits = function(num) {
-              num += "";
-              if (num.length === 1) {
-                num = "0" + num;
-              }
-             return num;
-            };
-            setInterval(yyyymmddhhmiss, 100);
-        </script>
 
     </body>
 </html>
